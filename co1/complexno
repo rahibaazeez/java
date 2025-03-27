@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class ComplexNumber {
+    int real, imaginary;
+        ComplexNumber(Scanner scanner) {
+        System.out.print("Enter real part: ");
+        real = scanner.nextInt();
+        System.out.print("Enter imaginary part: ");
+        imaginary = scanner.nextInt();
+    }
+    void display() {
+        System.out.println(real + " + " + imaginary + "i");
+    }
+    int getReal() { return real; }
+    int getImaginary() { return imaginary; }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ComplexNumber num1 = new ComplexNumber(scanner);
+        ComplexNumber num2 = new ComplexNumber(scanner);
+        System.out.print("First complex number: ");
+        num1.display();
+        System.out.print("Second complex number: ");
+        num2.display();
+        int realSum = num1.getReal() + num2.getReal();
+        int imaginarySum = num1.getImaginary() + num2.getImaginary();
+        System.out.println("Sum: " + realSum + " + " + imaginarySum + "i");
+        scanner.close();
+    }
+}
