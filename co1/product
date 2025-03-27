@@ -1,0 +1,58 @@
+import java.util.Scanner;
+class Product {
+    String productCode;
+    String name;
+    double price;
+
+    public Product(String productCode, String name, double price) {
+        this.productCode = productCode;
+        this.name = name;
+        this.price = price;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the product code for the first product:");
+        String code1 = sc.nextLine();
+        System.out.println("Enter the name of the first product:");
+        String name1 = sc.nextLine();
+        System.out.println("Enter the price for the first product:");
+        double price1 = sc.nextDouble();
+        sc.nextLine();
+        Product product1 = new Product(code1, name1, price1);
+
+        System.out.println("Enter the product code for the second product:");
+        String code2 = sc.nextLine();
+        System.out.println("Enter the name of the second product:");
+        String name2 = sc.nextLine();
+        System.out.println("Enter the price for the second product:");
+        double price2 = sc.nextDouble();
+        sc.nextLine();
+        Product product2 = new Product(code2, name2, price2);
+
+        System.out.println("Enter the product code for the third product:");
+        String code3 = sc.nextLine();
+        System.out.println("Enter the name of the third product:");
+        String name3 = sc.nextLine();
+        System.out.println("Enter the price for the third product:");
+        double price3 = sc.nextDouble();
+        Product product3 = new Product(code3, name3, price3);
+
+        Product lowestPriceProduct = product1;
+
+        if (product2.price < lowestPriceProduct.price) {
+            lowestPriceProduct = product2;
+        }
+        if (product3.price < lowestPriceProduct.price) {
+            lowestPriceProduct = product3;
+        }
+
+        System.out.println("Product with the lowest price is: ");
+        System.out.println("Code: " + lowestPriceProduct.productCode);
+        System.out.println("Name: " + lowestPriceProduct.name);
+        System.out.println("Price: " + lowestPriceProduct.price);
+
+        sc.close();
+    }
+}
