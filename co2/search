@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class ArraySearch {
+    int[] arr;
+    public ArraySearch(int size) {
+        arr = new int[size];
+    }
+    public void fillArray() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter " + arr.length + " elements for the array:");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = scanner.nextInt();
+        }
+    }
+    public int searchElement(int target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+        public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+        ArraySearch arraySearch = new ArraySearch(size);
+        arraySearch.fillArray();
+        System.out.print("Enter the element to search: ");
+        int target = scanner.nextInt();
+        int result = arraySearch.searchElement(target);
+        if (result == -1) {
+            System.out.println("Element not found in the array.");
+        } else {
+            System.out.println("Element found at index: " + result);
+        }
+        scanner.close();
+    }
+}
